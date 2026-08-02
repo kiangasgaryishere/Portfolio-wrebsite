@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+:root {
+  --accent-color: #34d399;
+  --accent-rgb: 52, 211, 153;
+  --accent-hover: #10b981;
+}
+
+@layer base {
+  html, body, * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0b0b0c;
+    color: #ffffff;
+  }
+
+  html.lang-fa body {
+    font-family: 'Vazirmatn', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  h1, .font-display {
+    font-family: 'Syne', sans-serif;
+  }
+
+  html.lang-fa h1, html.lang-fa .font-display {
+    font-family: 'Vazirmatn', 'Syne', sans-serif;
+  }
+}
+
+/* Custom CSS media query utilities for extra-small mobile viewports (< 375px) */
+@media (max-width: 374.98px) {
+  .hero-heading-text {
+    font-size: clamp(1.15rem, 6.8vw, 1.6rem) !important;
+    letter-spacing: -0.025em !important;
+    line-height: 1.12 !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto;
+    padding-left: 0.125rem !important;
+    padding-right: 0.125rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-subheading-text {
+    font-size: clamp(0.75rem, 3.6vw, 0.875rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  .hero-metric-num {
+    font-size: 1.125rem !important;
+  }
+
+  .hero-metric-label {
+    font-size: 0.625rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Custom CSS helper utilities for dynamic accent theme */
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.border-accent {
+  border-color: var(--accent-color);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* High-performance GPU Keyframe Animations for Luxury Ambient Aura */
+@keyframes auraBreath {
+  0%, 100% {
+    transform: translate3d(-50%, -50%, 0) scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(-50%, -52%, 0) scale(1.08) rotate(3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes auraPulse {
+  0%, 100% {
+    transform: translate3d(-50%, 0, 0) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate3d(-50%, -2%, 0) scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes auraSlowSpin {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate3d(-10px, 15px, 0) scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes floatDelayed {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(20px, -15px, 0) scale(1.12);
+    opacity: 0.8;
+  }
+}
+
+@keyframes floatRight {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate3d(45px, -25px, 0) scale(1.18);
+    opacity: 0.92;
+  }
+}
+
+.animate-aura-breath {
+  will-change: transform, opacity;
+  animation: auraBreath 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-aura-pulse {
+  will-change: transform, opacity;
+  animation: auraPulse 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-aura-spin {
+  will-change: transform;
+  animation: auraSlowSpin 90s linear infinite;
+}
+
+.animate-float-slow {
+  will-change: transform, opacity;
+  animation: floatSlow 16s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  will-change: transform, opacity;
+  animation: floatDelayed 18s ease-in-out infinite;
+}
+
+.animate-float-right {
+  will-change: transform, opacity;
+  animation: floatRight 15s ease-in-out infinite;
+}
+
+/* Hide scrollbar for clean editorial look */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes waveHand {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 60% { transform: rotate(14deg); }
+  40%, 80% { transform: rotate(-8deg); }
+}
+
+.animate-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: waveHand 2.2s infinite ease-in-out;
+}
